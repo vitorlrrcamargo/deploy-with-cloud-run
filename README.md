@@ -1,18 +1,18 @@
-# 🌤️ API de Clima por CEP - Go + Google Cloud Run
+# 🌤️ Zip Code Weather API - Go + Google Cloud Run
 
-Este projeto é uma API desenvolvida em **Go** que retorna a temperatura de uma cidade com base em um CEP informado. A aplicação utiliza a [API ViaCEP](https://viacep.com.br/) para obter a cidade e a [WeatherAPI](https://www.weatherapi.com/) para retornar os dados de clima atual. O deploy está feito no **Google Cloud Run**.
+This project is an API developed in **Go** that returns the temperature of a city based on a provided Zip Code (CEP). The application uses the [ViaCEP API](https://viacep.com.br/) to get the city and the [WeatherAPI](https://www.weatherapi.com/) to return current weather data. The deployment is done on **Google Cloud Run**.
 
 ---
 
-## 🚀 Acesse a aplicação
+## 🚀 Access the application
 
-Você pode testar a aplicação diretamente no ar através do link:
+You can test the application directly online through the link:
 
 👉 [https://cloudrun-goexpert-lardup467q-uc.a.run.app/weather?cep=13024091](https://cloudrun-goexpert-lardup467q-uc.a.run.app/weather?cep=13024091)
 
 ---
 
-## 🔧 Tecnologias Utilizadas
+## 🔧 Technologies Used
 
 - [Go](https://golang.org/)
 - [Docker](https://www.docker.com/)
@@ -22,49 +22,49 @@ Você pode testar a aplicação diretamente no ar através do link:
 
 ---
 
-## 📦 Como rodar localmente
+## 📦 How to run locally
 
-### 1. Clonar o repositório
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repo.git
 cd seu-repo
 ```
 
-### 2. Rodar localmente (sem Docker)
+### 2. Run locally (without Docker)
 
 ```bash
 go run main.go
 ```
-Acesse em: http://localhost:8080/weather?cep=13024091
+Access at: http://localhost:8080/weather?cep=13024091
 
-### 3. Rodar com Docker
+### 3. Run with Docker
 
-Build e subir o container:
+Build and bring up the container:
 ```bash
 docker-compose up --build
 ```
-Acesse em: http://localhost:8080/weather?cep=13024091
+Access at: http://localhost:8080/weather?cep=13024091
 
-## 🧪 Testes
-Os testes unitários estão localizados na pasta tests.
+## 🧪 Tests
+Unit tests are located in the tests folder.
 
-Para rodar os testes:
+To run the tests:
 ```bash
 go test ./...
 ```
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```bash
 deploy-com-cloud-run/
 ├── handler/
-│   └── weather.go
+│   └── weather.go
 ├── service/
-│   ├── cep.go
-│   └── weather.go
+│   ├── cep.go
+│   └── weather.go
 ├── tests/
-│   └── handler_test.go
+│   └── handler_test.go
 ├── Dockerfile
 ├── docker-compose.yml
 ├── go.mod
@@ -73,29 +73,29 @@ deploy-com-cloud-run/
 
 ## 🌐 Endpoints
 GET /weather?cep=XXXXXXXX
-Retorna a temperatura da cidade referente ao CEP informado.
+Returns the temperature of the city corresponding to the informed Zip Code (CEP).
 
-Exemplo:
+Example:
 GET /weather?cep=13024091
-Resposta:
+Response:
 json
-Copiar
-Editar
+Copy
+Edit
 {
-  "temp_C": 24.5,
-  "temp_F": 76.1,
-  "temp_K": 297.5
+  "temp_C": 24.5,
+  "temp_F": 76.1,
+  "temp_K": 297.5
 }
 
-## ⚠️ Observações
-O projeto faz chamadas externas para APIs públicas, portanto está sujeito à disponibilidade e limites dessas APIs.
+## ⚠️ Notes
+The project makes external calls to public APIs, therefore it is subject to the availability and limits of these APIs.
 
-A chave da WeatherAPI está hardcoded no código apenas para fins de teste e aprendizado. Em produção, o ideal é utilizar variáveis de ambiente ou secret managers.
+The WeatherAPI key is hardcoded in the code for testing and learning purposes only. In production, it is ideal to use environment variables or secret managers.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 Vitor Camargo
 
-## ☁️ Deploy no Google Cloud Run
-O deploy está feito na plataforma Google Cloud Run, garantindo escalabilidade automática e alta disponibilidade.
+## ☁️ Deploy on Google Cloud Run
+The deployment is done on the Google Cloud Run platform, ensuring automatic scalability and high availability.
 
 URL: https://cloudrun-goexpert-lardup467q-uc.a.run.app/weather?cep=13024091
